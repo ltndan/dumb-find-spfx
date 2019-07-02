@@ -1,1 +1,10 @@
 @import "~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss";
+
+.resultsContainer {
+  margin-top: 0.5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  grid-auto-rows: 1fr;
+  grid-column-gap: 0.5em;
+  grid-row-gap: 0.5em;
+}
