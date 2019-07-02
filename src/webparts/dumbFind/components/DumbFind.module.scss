@@ -7,4 +7,9 @@
   grid-auto-rows: 1fr;
   grid-column-gap: 0.5em;
   grid-row-gap: 0.5em;
+  transition: filter 300ms linear;
+
+  &.blurred {
+    filter: blur(0.2em);
+  }
 }
