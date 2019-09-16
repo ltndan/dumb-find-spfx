@@ -4,7 +4,7 @@ import { IDumbFindProps } from "./IDumbFindProps";
 import SearchBar from "../components/searchBar/searchBar";
 import pnp from "sp-pnp-js";
 import { ResultItem } from "../models/resultItem";
-import ResultItemView from "../components/resultItem/resultItemView";
+import { ResultItemView } from "../components/resultItem/resultItemView";
 
 interface IDumbFindState {
   resultItems: ResultItem[];

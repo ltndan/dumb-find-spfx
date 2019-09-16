@@ -7,14 +7,10 @@ interface IResultItemViewProps {
   price: string;
 }
 
-export default class ResultItemView extends React.Component<IResultItemViewProps, {}> {
-  public render(): React.ReactElement<IResultItemViewProps> {
-    return (
-      <article className={styles.item}>
-        <div style={{ backgroundImage: `url("${this.props.imageUrl}")` }} />
-        <h3>{this.props.title}</h3>
-        <h4>{this.props.price || "FREE"}</h4>
-      </article>
-    );
-  }
-}
+export const ResultItemView = (props: IResultItemViewProps) => (
+  <article className={styles.item}>
+    <div style={{ backgroundImage: `url("${props.imageUrl}")` }} />
+    <h3>{props.title}</h3>
+    <h4>{props.price || "FREE"}</h4>
+  </article>
+);
