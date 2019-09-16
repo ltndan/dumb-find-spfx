@@ -25,7 +25,7 @@ export default class SearchBar extends React.Component<ISearchBarProps, ISearchB
         <SearchBox
           placeholder={strings.searchLowerCase}
           value={this.state.value}
-          onChange={value => this.setState({ value })}
+          onChange={(_event, value) => this.setState({ value })}
           onSearch={() => this.props.onSearch(this.state.value)}
         />
       </React.Fragment>
