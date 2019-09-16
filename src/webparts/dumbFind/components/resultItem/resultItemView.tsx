@@ -7,10 +7,4 @@ interface IResultItemViewProps {
   price: string;
 }
 
-export const ResultItemView = (props: IResultItemViewProps) => (
-  <article className={styles.item}>
-    <div style={{ backgroundImage: `url("${props.imageUrl}")` }} />
-    <h3>{props.title}</h3>
-    <h4>{props.price || "FREE"}</h4>
-  </article>
-);
+export const ResultItemView = (props: IResultItemViewProps) => <article className={styles.item}>do me</article>;
