@@ -1,4 +1,4 @@
-## dumb-find
+## dumb-find-spfx
 
 This is where you include your WebPart documentation.
 

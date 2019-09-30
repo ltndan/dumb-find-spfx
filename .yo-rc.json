@@ -2,11 +2,11 @@
   "@microsoft/generator-sharepoint": {
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.8.2",
-    "libraryName": "dumb-find",
-    "libraryId": "e7351116-43f5-482f-90d1-2826bcd8c59e",
+    "version": "1.9.1",
+    "libraryName": "dumb-find-spfx",
+    "libraryId": "dc9b5689-2bae-4d80-831c-316a2909e14a",
     "packageManager": "npm",
-    "isDomainIsolated": true,
+    "isDomainIsolated": false,
     "componentType": "webpart"
   }
 }

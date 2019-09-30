@@ -1,14 +1,14 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "dumb-find-client-side-solution",
-    "id": "e7351116-43f5-482f-90d1-2826bcd8c59e",
+    "name": "dumb-find-spfx-client-side-solution",
+    "id": "dc9b5689-2bae-4d80-831c-316a2909e14a",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
-    "isDomainIsolated": true
+    "isDomainIsolated": false
   },
   "paths": {
-    "zippedPackage": "solution/dumb-find.sppkg"
+    "zippedPackage": "solution/dumb-find-spfx.sppkg"
   }
 }

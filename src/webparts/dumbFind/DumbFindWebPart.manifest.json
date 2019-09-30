@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
-  "id": "ceed6f13-13ea-4a99-9404-cbacc70d7671",
+  "id": "bae8e12d-d243-416f-b209-f1c8080c2e1f",
   "alias": "DumbFindWebPart",
   "componentType": "WebPart",
 
@@ -14,16 +14,14 @@
   "requiresCustomScript": false,
   "supportedHosts": ["SharePointWebPart"],
 
-  "preconfiguredEntries": [
-    {
-      "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
-      "group": { "default": "Other" },
-      "title": { "default": "Dumb Find" },
-      "description": { "default": "This webpart finds stuff in SharePoint" },
-      "officeFabricIconFontName": "VennDiagram",
-      "properties": {
-        "description": "Dumb Find"
-      }
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
+    "group": { "default": "Other" },
+    "title": { "default": "Dumb Find" },
+    "description": { "default": "Nicht die smarteste Suche" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "description": "Dumb Find"
     }
-  ]
+  }]
 }

@@ -1,31 +1,25 @@
-import * as React from "react";
-import styles from "./DumbFind.module.scss";
-import { IDumbFindProps } from "./IDumbFindProps";
-import SearchBar from "../components/searchBar/searchBar";
-import pnp from "sp-pnp-js";
-import { ResultItem } from "../models/resultItem";
-import { ResultItemView } from "../components/resultItem/resultItemView";
+import * as React from 'react';
+import styles from './DumbFind.module.scss';
+import { IDumbFindProps } from './IDumbFindProps';
+import { escape } from '@microsoft/sp-lodash-subset';
 
-interface IDumbFindState {
-  resultItems: ResultItem[];
-  loading: boolean;
-}
-
-export default class DumbFind extends React.Component<IDumbFindProps, IDumbFindState> {
-  constructor(props: IDumbFindProps) {
-    super(props);
-
-    this.state = {
-      resultItems: [],
-      loading: false,
-    };
-  }
-
-  public componentDidMount() {}
-
-  private async searchItems(searchQuery: string) {}
-
+export default class DumbFind extends React.Component<IDumbFindProps, {}> {
   public render(): React.ReactElement<IDumbFindProps> {
-    return <React.Fragment>do me</React.Fragment>;
+    return (
+      <div className={ styles.dumbFind }>
+        <div className={ styles.container }>
+          <div className={ styles.row }>
+            <div className={ styles.column }>
+              <span className={ styles.title }>Welcome to SharePoint!</span>
+              <p className={ styles.subTitle }>Customize SharePoint experiences using Web Parts.</p>
+              <p className={ styles.description }>{escape(this.props.description)}</p>
+              <a href="https://aka.ms/spfx" className={ styles.button }>
+                <span className={ styles.label }>Learn more</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
