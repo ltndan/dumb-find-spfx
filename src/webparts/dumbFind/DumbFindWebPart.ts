@@ -1,24 +1,33 @@
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
-
+import { sp } from '@pnp/sp';
 import * as strings from 'DumbFindWebPartStrings';
-import DumbFind from './components/DumbFind';
+import * as React from 'react';
+import * as ReactDom from 'react-dom';
+import { DumbFind } from './components/DumbFind';
 import { IDumbFindProps } from './components/IDumbFindProps';
 
 export interface IDumbFindWebPartProps {
   description: string;
 }
 
-export default class DumbFindWebPart extends BaseClientSideWebPart<IDumbFindWebPartProps> {
+export default class DumbFindWebPart extends BaseClientSideWebPart<
+  IDumbFindWebPartProps
+> {
+  public onInit(): Promise<void> {
+    return super.onInit().then(_ => {
+      sp.setup({
+        spfxContext: this.context
+      });
+    });
+  }
 
   public render(): void {
-    const element: React.ReactElement<IDumbFindProps > = React.createElement(
+    const element: React.ReactElement<IDumbFindProps> = React.createElement(
       DumbFind,
       {
         description: this.properties.description

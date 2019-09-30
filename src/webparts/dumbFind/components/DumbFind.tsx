@@ -1,25 +1,26 @@
-import * as React from 'react';
-import styles from './DumbFind.module.scss';
-import { IDumbFindProps } from './IDumbFindProps';
-import { escape } from '@microsoft/sp-lodash-subset';
+import React, { useEffect, useState } from 'react';
+import { Gallery } from '../../../components/gallery/gallery';
+import { SearchBar } from '../../../components/searchbar';
+import { IItem } from '../../../interfaces/item';
+import { searchItems } from '../../../services/searchService';
 
-export default class DumbFind extends React.Component<IDumbFindProps, {}> {
-  public render(): React.ReactElement<IDumbFindProps> {
-    return (
-      <div className={ styles.dumbFind }>
-        <div className={ styles.container }>
-          <div className={ styles.row }>
-            <div className={ styles.column }>
-              <span className={ styles.title }>Welcome to SharePoint!</span>
-              <p className={ styles.subTitle }>Customize SharePoint experiences using Web Parts.</p>
-              <p className={ styles.description }>{escape(this.props.description)}</p>
-              <a href="https://aka.ms/spfx" className={ styles.button }>
-                <span className={ styles.label }>Learn more</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
+export const DumbFind = () => {
+  const [query, setQuery] = useState('');
+  const [items, setItems] = useState<IItem[]>([]);
+
+  useEffect(() => {
+    search();
+  }, [query]);
+
+  const search = async () => {
+    const results = await searchItems(query);
+    setItems(results);
+  };
+
+  return (
+    <React.Fragment>
+      <SearchBar value={query} onChange={setQuery}></SearchBar>
+      <Gallery items={items}></Gallery>
+    </React.Fragment>
+  );
+};
